@@ -256,6 +256,16 @@ function RemoveElement(array,element)
   }
 }
 
+function FillRandom(array,limit)
+/*Funcion que llena la lista de valores aleatorios, añadiendo un limite. Si el limite no se pasa por parametro se asigna un valor de 10*/
+{
+  limit||(limit = 10);
+  for (var i = 0; i < listLength; i++) {
+    array[i] = parseInt(Math.random()*limit + 1);
+  }
+  return size(array);
+}
+
 function test()
 /*Funcion para probar las distintas funciones implementadas en el script*/
 {
@@ -295,9 +305,9 @@ function test()
   }
 
   console.log("Insertar un elemento dentro de la lista(addAt): " + addAt(list,8,2));
-  console.log("Elementos en la lista(ToString): " +ToString(list));
-  console.log("Indice del elemento 3 (IndexOf): "+IndexOf(list,3));
-  console.log("Indice del elemento 8 (LastIndexOf): "+LastIndexOf(list,8));
+  console.log("Elementos en la lista(ToString): " + ToString(list));
+  console.log("Indice del elemento 3 (IndexOf): " + IndexOf(list,3));
+  console.log("Indice del elemento 8 (LastIndexOf): " + LastIndexOf(list,8));
   console.log("Capacidad de la lista(capacity): "+ Capacity(list));
   console.log("Primer elemento a de la lista (FirstElement): " + FirstElement(list));
 
@@ -308,6 +318,19 @@ function test()
   console.log("Eliminamos un elemento de la lista: " + RemoveElement(list,8) );
 
   console.log("Elementos en la lista(ToString), con la lista casi llena: " + ToString(list));
+
+  console.log("Vaciamos la lista (Clear): " + clear(list));
+
+  console.log("Llenamos la lista de valores aleatorios sin pasar limite por parametro (FillRandom): " + FillRandom(list));
+
+  console.log("Mostramos los valores de la lista en una cadena: " + ToString(list));
+
+  console.log("Vaciamos la lista: " + clear(list));
+
+  console.log("Llenamos la lista de valores aleatorios pasando un limite por parametro (FillRandom): " + FillRandom(list,100));
+
+  console.log("Mostramos los valores de la lista en una cadena: " + ToString(list));
+
   
 }
 
