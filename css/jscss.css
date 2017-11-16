@@ -75,3 +75,42 @@ footer p{
 input, button{
   margin-bottom: 10px;
 }
+.cont,.list{
+	width: 40%;
+	display: inline-block;
+	
+}
+.cont{
+	margin-left: 10%;
+	margin-right: 2px;
+}
+.list{
+	margin: 0 auto;
+	background-color: rgba(239, 221, 184, 0.5);
+	margin-bottom: 10px;
+	min-height: 200px;
+}
+.form{
+	width: 100%;
+	margin: 0 auto;
+	background-color: rgba(239, 221, 184, 0.5);
+	margin-bottom: 10px;
+}
+.form > *{
+	display: inline-block;
+	width: 99%;
+	height: 30px;
+}
+.btn{
+	width: 100%;
+	display: table;
+}
+.btn >*{
+	display: table-cell;
+	width: 49%;
+}
+button{
+	height: 30px;
+	margin: 2px;	
+}
+

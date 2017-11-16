@@ -79,7 +79,7 @@ function size(array)
       finLista = true;
     }
   }
-  return i + 1;
+  return i ;
 }
 
 function add(array,element)
@@ -135,7 +135,7 @@ function Remove(array,index)
 /*Funcion que quita un elemento de la lista indicando su posicion. Desplaza toda la lista dejando la posicion
 libre al final de la misma*/
 {
-  if(indexIn(index)){
+  if(indexIn(index) && !isEmpty(list)){
     var element = array[index];
     while(!isNaN(array[index + 1]) && index < listLength-1){
       var aux = array[index];
@@ -146,7 +146,7 @@ libre al final de la misma*/
     array[index] = NaN;
     return element;
   }else{
-    throw "Index out of list range.";
+    throw "Index out of list range or empty list.";
   }
 }
 
@@ -212,7 +212,7 @@ function clear(array)
 /*Funcion que elimina todos los valores de la lista*/
 {
   for (var i = 0; i < listLength; i++) {
-    array[0] = NaN;      
+    array[i] = NaN;      
   }
   return size(array);
 }
@@ -335,3 +335,12 @@ function test()
 }
 
 test();
+
+function Reset()
+/*Reinicia los valores de list para que se pueda utilizar en la pagina HTML*/
+{
+  listLength = 0;
+  list = new Array();
+}
+
+Reset();
