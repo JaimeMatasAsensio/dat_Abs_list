@@ -9,6 +9,7 @@ var IdElemInput = document.getElementById("Elem");
 var IdIndexInput = document.getElementById("Index");
     //Buttons
 var IdCreateBtn = document.getElementById("CreateList");
+var IdRestartBtn = document.getElementById("RestartList");
 var IdAddBtn = document.getElementById("AddElement");
 var IdGetIndexBtn = document.getElementById("GetIndex");
 var IdGetElementBtn = document.getElementById("GetElement");
@@ -30,6 +31,7 @@ IdNumberInput.disabled = true;
 IdElemInput.disabled = true;
 IdIndexInput.disabled = true;
 
+IdRestartBtn.disabled = true;
 IdAddBtn.disabled = true;
 IdAddAtBtn.disabled = true;
 IdGetIndexBtn.disabled = true;
@@ -41,6 +43,7 @@ IdFirstIndexBtn.disabled = true;
 IdFillRandomBtn.disabled = true;
 IdClearListBtn.disabled = true;
 IdAddAtBtn.disabled = true;
+
 
 function DrawList(array)
 /*Funcion que dibuja todos los elementos de la lista*/
@@ -92,6 +95,7 @@ function Start(num)
     IdCreateBtn.disabled = true;
 
     //Desbloqueamos los controles para manipularla
+    IdRestartBtn.disabled = false;
     IdNumberInput.disabled = false;
     IdElemInput.disabled = false;
     IdIndexInput.disabled = false;
@@ -132,6 +136,7 @@ function clearList(){
 }
 function addElem(num){
    try{
+    num = parseInt(num)
     var size = add(list,num);
     DrawList(list);
     DrawStringList();
@@ -246,4 +251,34 @@ function AddElement(num,ind){
     returnFocusOnElement();
   }
 }
+function restart()
+/*Funcion que resetea la lista, bloquea los controles de manupulacion y reactiva los controles de creacion de la lista*/
+{
 
+  IdListLengnthInput.disabled = false;
+  IdCreateBtn.disabled = false;
+  IdRestartBtn.disabled = true;
+
+  IdNumberInput.disabled = true;
+  IdElemInput.disabled = true;
+  IdIndexInput.disabled = true;
+  
+  IdAddBtn.disabled = true;
+  IdAddAtBtn.disabled = true;
+  IdGetIndexBtn.disabled = true;
+  IdGetElementBtn.disabled = true;
+  IdRemoveElementBtn.disabled = true;
+  IdRemoveAtBtn.disabled = true;
+  IdLastIndexBtn.disabled = true;
+  IdFirstIndexBtn.disabled = true;
+  IdFillRandomBtn.disabled = true;
+  IdClearListBtn.disabled = true;
+  IdAddAtBtn.disabled = true;
+
+  IdResult.innerHTML = "";
+  IdList.innerHTML = ""; 
+  IdTstring.innerHTML = "";
+  IdNumberInput.value = "";
+  
+  Reset()
+}
